@@ -21,7 +21,9 @@
             <template v-for="item in menu">
               <el-submenu v-if="item.child && item.child.length>0" :key="item.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}`">
                 <template slot="title">{{ item.name }}</template>
-                <el-menu-item v-for="childItem in item.child" :key="childItem.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}&childId=${childItem.id}`">{{ childItem.name }}</el-menu-item>
+                <el-menu-item v-if="item.child[0].id==54" :key="item.child[0].id" :index="`/departmentHome?siteId=45`">图书馆</el-menu-item>
+                <el-menu-item v-if="item.child[1].id==55" :key="item.child[1].id" :index="`/common/commonlist1?columnId=42&columnName=%E5%85%AC%E5%85%B1%E6%9C%8D%E5%8A%A1&childId=55`">档案馆</el-menu-item>
+                <el-menu-item v-else v-for="childItem in item.child" :key="childItem.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}&childId=${childItem.id}`">{{ childItem.name }}</el-menu-item>
               </el-submenu>
               <el-menu-item v-else :key="item.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}`">{{ item.name }}</el-menu-item>
             </template>
