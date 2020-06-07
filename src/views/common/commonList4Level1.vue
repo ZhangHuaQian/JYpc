@@ -93,7 +93,8 @@ export default {
         pageSize: 10
       }
       getList('news', data).then(response => {
-        const results = response.data.data
+		const results = response.data.data
+		console.log(results,'222')
         this.list = results.data
         this.total = results.count
         if (!this.banner || !this.banner.id) {
