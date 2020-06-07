@@ -89,9 +89,9 @@ export default {
       'menu'
     ])
   },
-  // created() {
-  //   console.log(this.menu)
-  // },
+  created() {
+    console.log(this.menu)
+  },
   methods: {
 
   }
