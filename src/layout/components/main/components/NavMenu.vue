@@ -19,16 +19,28 @@
           >
 
             <template v-for="item in menu">
+              <el-menu-item v-if="item.name==='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='部门概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?itemid=${item.id}&siteId=${$route.query.siteId}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='规章制度'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='学院概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?itemid=${item.id}&siteId=${$route.query.siteId}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='课程建设'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='师资队伍'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='教学科研'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <!-- <el-menu-item v-if="item.name==''" :key="item.id" :index="`${item.url}?siteId=$route.query.siteId&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item> -->
               <el-submenu v-if="item.child && item.child.length>0" :key="item.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}`">
                 <template slot="title">{{ item.name }}</template>
+                <!-- <el-menu-item v-if="item.name=='工作职责'" :key="item.id" :index="`${item.url}?siteId=$route.query.siteId&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item> -->
                 <el-menu-item v-if="item.child[0].id==54" :key="item.child[0].id" :index="`/departmentHome?siteId=45`">图书馆</el-menu-item>
                 
                 <el-menu-item v-if="item.child[1].id==55" :key="item.child[1].id" :index="`/common/commonlist1?columnId=42&columnName=%E5%85%AC%E5%85%B1%E6%9C%8D%E5%8A%A1&childId=55`">档案馆</el-menu-item>
                 
                 <el-menu-item v-else v-for="childItem in item.child" :key="childItem.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}&childId=${childItem.id}`">{{ childItem.name }}</el-menu-item>
               </el-submenu>
-              <el-menu-item v-if="item.url=='/common/commonlist2'" :key="item.id" :index="`${item.url}?siteId=$route.query.siteId&columnId=${item.id}&columnName=${item.name}`">{{ item.name }}</el-menu-item>
-              <el-menu-item v-else :key="item.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}`">{{ item.name }}</el-menu-item>
+             
+              
+              <el-menu-item v-if="item.name!=='师资队伍'&&item.name!=='学院概况'&&item.name!=='课程建设'&&item.name!=='教学科研'&&item.name!=='工作职责'&&item.name!=='部门概况'&&item.name!=='规章制度'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}`">{{ item.name }}</el-menu-item>
+              
+
             </template>
             <!--              <template v-if="$route.meta.navBG">
                 <el-menu-item index="/secondaryHome/index">首页</el-menu-item>
@@ -93,7 +105,7 @@ export default {
     ])
   },
   created() {
-    console.log(this.menu)
+    console.log(this.menu,'dh')
   },
   methods: {
 

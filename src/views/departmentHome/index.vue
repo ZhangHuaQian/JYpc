@@ -232,6 +232,7 @@ export default {
               case '部门动态':
                 this.getNewsList(this.columnList[i].id, 5).then(results => {
                   this.bumendongtai = results
+                  console.log(results,'5858')
                 })
                 break
               case '通知公告':
@@ -247,6 +248,7 @@ export default {
               case '工作职责':
                 this.getNewsList(this.columnList[i].id).then(results => {
                   this.gongzuozhize = results
+                  console.log(results,'44444')
                 })
                 break
               case '部门风采':
