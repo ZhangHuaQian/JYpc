@@ -80,6 +80,7 @@
 
 <script>
 import { select } from '@/api/request.js'
+import {serverip as ip} from '@/utils/serverIP'
 import moment from 'moment'
 moment.locale('zh-cn')
 export default {
@@ -116,7 +117,7 @@ export default {
 	  },
 	  //阅读推荐
 	  getHotNews(){
-		  this.axios.post('/gxjcxy/unauth/news/selectHotNews',
+		  this.axios.post(ip+'/news/selectHotNews',
 		    {siteId:this.$route.query.siteId}
 		  ).then((res)=>{
 		   this.list=res.data.data
@@ -125,7 +126,7 @@ export default {
 	  },
 	  //相关资讯
 	  getXiangNews(){
-	  		  this.axios.post('/gxjcxy/unauth/news/select',
+	  		  this.axios.post(ip+'/news/select',
 	  		    {id:this.$route.query.itemid,siteId:this.$route.query.siteId}
 	  		  ).then((res)=>{
 	  		   this.listSec=res.data.data
