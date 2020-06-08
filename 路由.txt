@@ -1,3 +1,4 @@
 /common/commonlist2   学院动态 课程建设  科学教研 师资队伍   部门-规章制度，工作职责，通知公告，通用列表
-/collegeHome  学院首页 部门首页
+/collegeHome  学院首页 
+/departmentHome  部门首页
 /common/details2 部门概况 学院概况
