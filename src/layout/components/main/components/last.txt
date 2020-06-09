@@ -1,0 +1,40 @@
+ <el-menu-item v-if="item.name==='学院概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='课程建设'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='师资队伍'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='教学科研'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item> -->
+
+
+
+                <!-- <el-menu-item v-if="item.name==='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`/common/commonlist2?siteId=${$route.query.siteId}&columnId=${gongzuozhize[0].columnId}&columnName=${item.name}`"> {{item.name}} </el-menu-item> -->
+               
+               
+               <!-- <el-menu-item v-if="item.name==='学院概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`/common/details2`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='课程建设'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`/common/commonlist2?site=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='师资队伍'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`/common/commonlist2?site=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='教学科研'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`/common/commonlist2?site=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}`">{{ item.name }}</el-menu-item> -->
+
+
+
+
+
+               <!-- <el-menu-item v-if="item.name==='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='部门概况'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?itemid=${item.id}&siteId=${$route.query.siteId}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='规章制度'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='学院概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?itemid=${item.id}&siteId=${$route.query.siteId}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='课程建设'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='师资队伍'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='教学科研'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item> -->
+              
+              
+              
+              <!-- <el-menu-item v-if="item.name==='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='部门概况'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='规章制度'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='学院概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='课程建设'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='师资队伍'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='教学科研'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item> -->
+
+               <!-- <el-menu-item v-if="item.name==''" :key="item.id" :index="`${item.url}?siteId=$route.query.siteId&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item> -->
+
+               <!-- <el-menu-item v-if="item.name=='工作职责'" :key="item.id" :index="`${item.url}?siteId=$route.query.siteId&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item> -->

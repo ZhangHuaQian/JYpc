@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row class="top-banner">
+    <el-row class="top-banner" >
       <span v-if="$route.meta.departmentName" class="departmentName">{{ $route.meta.departmentName }}</span>
       <!-- 添加专题top -->
       <el-row v-if="$route.path.indexOf('/zhauntiHome')>-1" :gutter="20" class="zhauntiHome">

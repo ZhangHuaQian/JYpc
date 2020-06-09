@@ -38,6 +38,9 @@ export default {
       default: null
     }
   },
+  created(){
+    this.getList()
+  },
   data() {
     return {
       list: [],
@@ -60,10 +63,11 @@ export default {
       immediate: true
     }
   },
+ 
   methods: {
     getList(id) {
       const data = {
-        columnId: id,
+        columnId: id||$route.query.columnId,
         pageNum: this.currentPage,
         pageSize: 10
       }
