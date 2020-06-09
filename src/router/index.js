@@ -137,6 +137,25 @@ const routes = [
             meta: { title: '通用列表详情——二级', banner: topSecondaryHome, navBG: navBG }
           }
         ]
+      },
+      {
+        name: 'commonList3',
+        path: '/common/commonlist3',
+        component: () => import ('@/views/common/commonList4Level3'),
+        meta: { title: '通用列表——二级例外', banner: topSecondaryHome, navBG: navBG },
+        children: [
+          {
+            path: '/common/commonlist3/list3',
+            component: () => import ('@/views/common/list4Level3'),
+            meta: { title: '通用列表——二级例外', banner: topSecondaryHome, navBG: navBG }
+          },
+          {
+            name: 'details3',
+            path: '/common/details3',
+            component: () => import ('@/views/common/details4Level3'),
+            meta: { title: '通用列表详情——二级例外', banner: topSecondaryHome, navBG: navBG }
+          }
+        ]
       }
     ]
   },

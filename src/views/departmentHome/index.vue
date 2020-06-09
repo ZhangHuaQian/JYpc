@@ -192,6 +192,9 @@ export default {
       guizhangzhidu: [],
       gongzuozhize: [],
       bumenfengcai: [],
+      gzzeID:'',
+      tzggID:'',
+      gzzdID:'',
       swiperOption: {
         pagination: {
           el: '.swiper-pagination',
@@ -211,6 +214,8 @@ export default {
     ])
   },
   created() {
+    console.log(this.gzzeID,'444441')
+    
     if (this.menu.length > 0) {
       for (var i = 0; i < this.menu.length; i++) {
         if (this.menu[i].name === '首页') {
@@ -219,6 +224,7 @@ export default {
       }
     }
   },
+ 
   methods: {
     getColumnList(id) {
       const data = {
@@ -243,17 +249,22 @@ export default {
               case '规章制度':
                 this.getNewsList(this.columnList[i].id).then(results => {
                   this.guizhangzhidu = results
+                  console.log(results,'规章制度')
+                  
                 })
                 break
               case '工作职责':
                 this.getNewsList(this.columnList[i].id).then(results => {
                   this.gongzuozhize = results
-                  console.log(results,'44444')
+                  // console.log(results,'44444')
+                  this.gzzeID=results
+                  console.log(results,'工作职责')
                 })
                 break
               case '部门风采':
                 this.getNewsList(this.columnList[i].id).then(results => {
                   this.bumenfengcai = results
+                  console.log(results,'部门风采')
                 })
                 break
             }
@@ -284,6 +295,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>

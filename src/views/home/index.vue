@@ -178,7 +178,7 @@
             <el-col :span="12" style="font-size: 20px;">专题网站</el-col>
             <el-col :span="12" style="text-align: right;line-height: 24px;">
               <!-- :to="{path:'/common/commonlist2', query: {columnName: '专题网站'}}" -->
-              <router-link :to="{path:'/common/commonlist2', query: {columnName: '专题网站'}}">
+              <router-link :to="{path:'/common/commonlist3', query: {columnName: '专题网站'}}">
               查看更多>
               </router-link>
               </el-col>

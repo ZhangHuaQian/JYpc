@@ -33,7 +33,10 @@ export default {
   data() {
     return {
       menu: [],
-      activeItem: {}
+      activeItem: {},
+      gzzeID:'',
+      tzggID:'',
+      gzzd:''
     }
   },
   watch: {
@@ -50,6 +53,7 @@ export default {
       const data = {
         id: this.$route.query.columnId
       }
+      console.log(data,'aiyigu')
       getList('column', data, '/selectChild').then(response => {
         this.menu = response.data.data
         if (this.$route.query.childId) {

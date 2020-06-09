@@ -19,20 +19,42 @@
           >
 
             <template v-for="item in menu">
-              <el-menu-item v-if="item.name==='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
-              <el-menu-item v-if="item.name==='部门概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?itemid=${item.id}&siteId=${$route.query.siteId}`">{{ item.name }}</el-menu-item>
-              <el-menu-item v-if="item.name==='规章制度'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+              <!-- <el-menu-item v-if="item.name==='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`/common/commonlist2?siteId=${$route.query.siteId}&columnId=${gongzuozhize[0].columnId}&columnName=${item.name}&childId=${gongzuozhize[0].columnId}`"> 工作职责 </el-menu-item> -->
+              <!-- <el-menu-item v-if="item.name==='部门概况'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`/common/commonlist2/list2?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}&&newId=${item.id}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='规章制度'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`/common/commonlist2?siteId=${$route.query.siteId}&columnId=${guizhangzhidu[0].columnId}&columnName=${item.name}&childId=${guizhangzhidu[0].columnId}`">{{ item.name }}</el-menu-item>
                <el-menu-item v-if="item.name==='学院概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?itemid=${item.id}&siteId=${$route.query.siteId}`">{{ item.name }}</el-menu-item>
                <el-menu-item v-if="item.name==='课程建设'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
                <el-menu-item v-if="item.name==='师资队伍'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
-               <el-menu-item v-if="item.name==='教学科研'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='教学科研'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item> -->
+             
+             
+             
+             
+              <!-- <el-menu-item v-if="item.name==='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='部门概况'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?itemid=${item.id}&siteId=${$route.query.siteId}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='规章制度'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='学院概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?itemid=${item.id}&siteId=${$route.query.siteId}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='课程建设'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='师资队伍'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='教学科研'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}?siteId=${$route.query.siteId}&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item> -->
+              
+              
+              
+              <el-menu-item v-if="item.name==='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='部门概况'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+              <el-menu-item v-if="item.name==='规章制度'&&item.name!=='工作职责'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='学院概况'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='课程建设'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='师资队伍'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+               <el-menu-item v-if="item.name==='教学科研'&&item.name!=='学校概况'&&item.name!=='学术研究'&&item.name!=='队伍建设'&&item.name!=='公共服务'&&item.name!=='校园文化'" :key="item.id" :index="`${item.url}`">{{ item.name }}</el-menu-item>
+
                <!-- <el-menu-item v-if="item.name==''" :key="item.id" :index="`${item.url}?siteId=$route.query.siteId&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item> -->
               <el-submenu v-if="item.child && item.child.length>0" :key="item.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}`">
                 <template slot="title">{{ item.name }}</template>
                 <!-- <el-menu-item v-if="item.name=='工作职责'" :key="item.id" :index="`${item.url}?siteId=$route.query.siteId&columnId=${item.id}&columnName=${item.name}&childId=${item.id}`">{{ item.name }}</el-menu-item> -->
                 <el-menu-item v-if="item.child[0].id==54" :key="item.child[0].id" :index="`/departmentHome?siteId=45`">图书馆</el-menu-item>
                 
-                <el-menu-item v-if="item.child[1].id==55" :key="item.child[1].id" :index="`/common/commonlist1?columnId=42&columnName=%E5%85%AC%E5%85%B1%E6%9C%8D%E5%8A%A1&childId=55`">档案馆</el-menu-item>
+                <el-menu-item v-if="item.child[1].id==55" :key="item.child[1].id" :index="`/departmentHome?siteId=49`">档案馆</el-menu-item>
                 
                 <el-menu-item v-else v-for="childItem in item.child" :key="childItem.id" :index="`${item.url}?columnId=${item.id}&columnName=${item.name}&childId=${childItem.id}`">{{ childItem.name }}</el-menu-item>
               </el-submenu>
@@ -93,10 +115,17 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { getList } from '@/api/request.js'
+
 export default {
   data() {
     return {
-      seach: ''
+      seach: '',
+      bumendongtai: [],
+      tongzhigonggao: [],
+      guizhangzhidu: [],
+      gongzuozhize: [],
+      bumenfengcai: [],
     }
   },
   computed: {
@@ -106,8 +135,84 @@ export default {
   },
   created() {
     console.log(this.menu,'dh')
+
+    if (this.menu.length > 0) {
+      for (var i = 0; i < this.menu.length; i++) {
+        if (this.menu[i].name === '首页') {
+          this.getColumnList(this.menu[i].id)
+        }
+      }
+    }
+
+    
   },
+ 
   methods: {
+
+    getColumnList(id) {
+      const data = {
+        id
+      }
+      getList('column', data, '/selectChild').then(response => {
+        this.columnList = response.data.data
+        if (this.columnList.length > 0) {
+          for (var i = 0; i < this.columnList.length; i++) {
+            switch (this.columnList[i].name) {
+              case '部门动态':
+                this.getNewsList(this.columnList[i].id, 5).then(results => {
+                  this.bumendongtai = results
+                  console.log(results,'5858')
+                })
+                break
+              case '通知公告':
+                this.getNewsList(this.columnList[i].id).then(results => {
+                  this.tongzhigonggao = results
+                })
+                break
+              case '规章制度':
+                this.getNewsList(this.columnList[i].id).then(results => {
+                  this.guizhangzhidu = results
+                  console.log(results[0].columnId,'规章制度')
+                  
+                })
+                break
+              case '工作职责':
+                this.getNewsList(this.columnList[i].id).then(results => {
+                  this.gongzuozhize = results
+                  // console.log(results,'44444')
+                  this.gzzeID=results
+                  console.log(this.gongzuozhize[0].columnId,'工作职责')
+                })
+                break
+              case '部门风采':
+                this.getNewsList(this.columnList[i].id).then(results => {
+                  this.bumenfengcai = results
+                  console.log(results,'部门风采')
+                })
+                break
+            }
+          }
+        }
+      })
+    },
+    getNewsList(id, pageSize = 10) {
+      const data = {
+        columnId: id,
+        pageNum: 1,
+        pageSize
+      }
+      return new Promise((resolve, reject) => {
+        getList('news', data).then(response => {
+          const results = response.data.data.data
+          for (var i = 0; i < results.length; i++) {
+            results[i].columnId = id
+          }
+          resolve(results)
+        }).catch(e => {
+          reject(e)
+        })
+      })
+    },
 
   }
 }
