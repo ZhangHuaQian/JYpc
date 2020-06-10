@@ -242,7 +242,8 @@ export default {
   methods: {
     getXYXW() {
       const data = {
-        columnId: 56,
+        // columnId: 56,
+        columnId:72,
         pageNum: 1,
         pageSize: 7
       }

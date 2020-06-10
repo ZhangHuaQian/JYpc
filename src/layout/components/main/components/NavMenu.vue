@@ -133,6 +133,7 @@ export default {
       for (var i = 0; i < this.menu.length; i++) {
         if (this.menu[i].name === '首页') {
           this.getColumnList(this.menu[i].id)
+          console.log(this.menu[i].id,'111')
         }
       }
     }
