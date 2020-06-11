@@ -126,6 +126,11 @@ export default {
       'menu'
     ])
   },
+   watch: {
+      '$route'(to, from) {
+        this.$router.go(0);
+      }
+    },
   created() {
     console.log(this.menu,'dh')
 

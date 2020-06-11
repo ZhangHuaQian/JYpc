@@ -23,9 +23,10 @@ export default {
       window.location.href="http://www.360.com"
     } else {
 
-      alert("pc端");
+      // alert("pc端");
       // console.log(window.location)
-      this.$router.replace("/home");
+      // this.$router.replace("/home");
+      window.location.href=window.location.href;
 
            
 

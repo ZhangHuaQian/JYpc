@@ -213,6 +213,11 @@ export default {
       'menu'
     ])
   },
+   watch: {
+      '$route'(to, from) {
+        this.$router.go(0);
+      }
+    },
   created() {
     console.log(this.gzzeID,'444441')
     

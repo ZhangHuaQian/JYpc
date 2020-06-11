@@ -172,7 +172,7 @@ export default {
         pageSize: 5
       }
       getList('news', data).then(response => {
-        this.sixiangzhengzhi = response.data.data.data
+        this. tuijianxinwen = response.data.data.data
       })
     },
     getSXZZ() {
