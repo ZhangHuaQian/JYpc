@@ -38,6 +38,9 @@ export default {
 
 <style lang="scss" scoped>
   .footer {
+    // position: fixed;
+    // width: 100VW;
+    // bottom:0;
     background-color: #4388CF;
     height: 12.5rem;
     padding: 1% 10.5%;

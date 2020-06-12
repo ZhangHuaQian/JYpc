@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="min-height:70vh">
     <el-row />
     <el-row :gutter="40" class="home-container">
       <el-col :xs="24" :md="6" class="content-left">
