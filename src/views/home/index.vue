@@ -241,6 +241,7 @@ export default {
   },
   methods: {
     getXYXW() {
+      
       const data = {
         // columnId: 56,
         columnId:72,
@@ -249,6 +250,7 @@ export default {
       }
       getList('news', data).then(response => {
         this.xiaoyuanxinwen = response.data.data.data
+        // console.log(this.xiaoyuanxinwen,'tg')
       })
     },
     getTZGG() {
@@ -259,7 +261,7 @@ export default {
       }
       getList('news', data).then(response => {
         this.tongzhigonggao = response.data.data.data
-        console.log(this.tongzhigonggao)
+        // console.log(this.tongzhigonggao,'123')
       })
     },
     getJCDT() {

@@ -5,7 +5,7 @@
       <el-col :xs="24" :md="6" class="content-left">
         <el-row>
           <el-row class="content-left-bangyang" style="position: relative;">
-            <span>{{ $route.query.columnName }}</span>
+            <span>{{ $route.query.columnName||$route.query.cloumnName }}</span>
             <el-col style="font-size: 0;"><img src="../../assets/common/xx.png" alt=""></el-col>
           </el-row>
           <el-row class="content-left-list">
@@ -39,19 +39,28 @@ export default {
       gzzd:''
     }
   },
-  watch: {
-    '$route.query': {
-      handler: function(val) {
-        this.getChildren()
-      },
-      deep: true,
-      immediate: true
-    }
+  // watch: {
+  //   'this.$route.query': {
+  //     handler: function(val) {
+  //       this.getChildren()
+  //     },
+  //     deep: true,
+  //     immediate: true
+  //   }
+  // },
+  created() {
+    this.getChildren(),
+    this.getList()
+    
+
   },
+
   methods: {
     getChildren() {
+      console.log(this.$route.query.columnId,'11')
       const data = {
-        id: this.$route.query.columnId
+        id: this.$route.query.columnId,
+        
       }
       console.log(data,'aiyigu')
       getList('column', data, '/selectChild').then(response => {

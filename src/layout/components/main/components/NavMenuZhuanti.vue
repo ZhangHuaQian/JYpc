@@ -7,7 +7,8 @@
       :style="{'backgroundSize': '100% 100%', 'backgroundImage': 'url('+$route.meta.navBG+')'}"
       justify="space-around"
     >
-      <el-col :span="20">
+    <el-col :span="4"></el-col>
+      <el-col :span="10">
         <el-row>
           <el-menu
             :default-active="`${$route.path}?columnId=${$route.query.columnId}&columnName=${$route.query.columnName}${$route.query.childId?'&childId='+$route.query.childId:''}`"
@@ -24,6 +25,14 @@
           </el-menu>
         </el-row>
       </el-col>
+       <el-col :span="4" style="line-height: 3.8rem;">
+          <el-input
+            v-model="seach"
+            class="seach-input"
+            placeholder="请输入内容"
+            suffix-icon="el-icon-search"
+          />
+        </el-col>
     </el-row>
   </div>
 </template>
@@ -46,11 +55,11 @@ export default {
   computed: {
     ...mapGetters(["menu"])
   },
-  // watch: {
-  //   $route(to, from) {
-  //     this.$router.go(0);
-  //   }
-  // },
+  watch: {
+    $route(to, from) {
+      this.$router.go(0);
+    }
+  },
   created() {
     console.log(this.menu, "dh");
 
