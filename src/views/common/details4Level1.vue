@@ -16,9 +16,10 @@
         </el-row>
         <el-divider />
         <el-row style="padding-bottom: 12px;color:rgba(80,80,80,1);font-size:16px;">
-          <a style="line-height:30px;">上一篇：爱心企业向我校捐赠防疫物资</a>
+          <!-- ,query:{itemid:item.id,siteId:item.siteId,columnId:item.columnId} -->
+          <router-link  :to="{path:'/common/details1',query:{itemid:prefix.id,siteId:prefix.siteId,columnId:prefix.columnId}}" style="line-height:30px;" v-if="prefix.title"><a> 上一篇：{{prefix.title}}</a> </router-link >
           <br>
-          <a style="line-height:30px;">下一篇：学校召开加强新型冠状病毒肺炎疫情防控工作暨新学期工作布置网络会议</a>
+          <router-link :to="{path:'/common/details1',query:{itemid:suffix.id,siteId:suffix.siteId,columnId:suffix.columnId}}" style="line-height:30px;" v-if="suffix.title"><a>下一篇：{{suffix.title}}</a> </router-link >
         </el-row>
       </el-col>
       <el-col class="others-news" :md="8">
@@ -27,7 +28,7 @@
             <div style="position: relative;">
               <span style="width:4px;height: 18px;background:rgba(1,111,188,1);border-radius:2px;display:inline-block;position: absolute;top: 9px;" />
               <span style="font-size:18px;color:rgba(51,51,51,1);line-height:36px;font-weight:bold;margin-left: 10px;">相关资讯</span>
-			  <div v-for="(item,index) in xiangList" style="margin-bottom: 1rem;" @click="toDetail(item.id,item.siteId)">
+			  <div v-for="item in xiangList" :key="item.id" style="margin-bottom: 1rem;" @click="toDetail(item.id,item.siteId)">
 				  <div style="border: 1px solid #c1c1c1;height: 200px;">
 					  <img style="width: 100%;" :src="item.image">  
 				  </div>
@@ -89,7 +90,10 @@ export default {
       form: {},
 	  list:[],
 	  listSec:'',
-	  xiangList:[]
+    xiangList:[],
+    lanID:'',
+    prefix:'',
+    suffix:'',
     }
   },
   created() {
@@ -99,7 +103,8 @@ export default {
   },
   mounted(){
 	  this.getHotNews()
-	  this.getXiangNews()
+    this.getXiangNews(),
+    this.getPrefixSuffix()
   },
   methods: {
 	  //相关资讯跳转
@@ -125,20 +130,27 @@ export default {
 		  })
 	  },
 	  //相关资讯
-	  getXiangNews(){
-	  		  this.axios.post(ip+'/news/select',
-	  		    {id:this.$route.query.itemid,siteId:this.$route.query.siteId}
-	  		  ).then((res)=>{
-	  		   this.listSec=res.data.data
-			   this.getXianGuanNews()
-	  		  console.log('',res)
-	  		  })
-	  },
+	  // getXiangNews(){
+	  // 		//   this.axios.post(ip+'/news/select',
+	  // 		//     {id:73,siteId:this.$route.query.siteId}
+	  // 		//   ).then((res)=>{
+	  // 		//    this.listSec=res.data.data
+		// 	  //  this.getXianGuanNews()
+	  // 		//   console.log('这是什么78',this.listSec)
+    //     //   })
+    //     this.axios.post(ip+'/unauth/news/selectRelatedNews',{
+    //       id:this.form.id,siteId:this.$route.query.siteId,columnId: this.$route.query.columnId
+    //     }).then((res)=>{
+    //       this.listSec=res.data.data
+		// 	   this.getXianGuanNews()
+	  // 		  console.log('相关资讯55',res)
+    //     })
+	  // },
 	  //相关资讯2
-	  getXianGuanNews(){
-		  this.xiangList = this.listSec.relateList
-		  console.log('相关资讯：',this.xiangList)
-	  },
+	  // getXianGuanNews(){
+		//   // this.xiangList = this.listSec.relateList
+		//   console.log('相关资讯：',this.xiangList)
+	  // },
     handleSelect(id, siteId) {
       const data = {
         id,
@@ -146,7 +158,52 @@ export default {
       }
       select('news', data).then(response => {
         this.form = response.data.data
+        console.log(this.form,'form')
       })
+    },
+
+    //相关资讯
+	  getXiangNews(){
+	  		//   this.axios.post(ip+'/news/select',
+	  		//     {id:73,siteId:this.$route.query.siteId}
+	  		//   ).then((res)=>{
+	  		//    this.listSec=res.data.data
+			  //  this.getXianGuanNews()
+	  		//   console.log('这是什么78',this.listSec)
+        //   })
+        // 获取资讯ID
+
+        
+        
+        
+      // this.handleSelect(id, siteId)
+      console.log(this.form,'lanmuID')
+        this.axios.post(ip+'news/selectRelatedNews',{
+          id:this.$route.query.itemid,siteId:this.$route.query.siteId,columnId:this.$route.query.columnId
+        }).then((res)=>{
+          this.listSec=res.data.data
+           this.xiangList = this.listSec
+            console.log('相关资讯：',this.xiangList)
+			  //  this.getXianGuanNews()
+	  		  console.log('相关资讯55',res)
+        })
+	  },
+	  //相关资讯2
+	  getXianGuanNews(){
+		  this.xiangList = this.listSec.relateList
+		 
+    },
+    getPrefixSuffix(){
+      const data={
+        id:this.$route.query.itemid,siteId:this.$route.query.siteId,columnId:this.$route.query.columnId
+      }
+      this.axios.post(ip+'news/selectPrefixSuffix',{...data}).then((res)=>{
+        console.log(res,'xiayitiao')
+        this.prefix=res.data.data.prefix
+        this.suffix=res.data.data.suffix
+        console.log(this.prefix,'prefix',this.suffix)
+      })
+
     },
     getMoment(date, str) {
       return moment(date).format(str)

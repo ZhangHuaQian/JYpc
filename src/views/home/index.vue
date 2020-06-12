@@ -22,7 +22,7 @@
                   <el-col :xs="24" :md="9">
                     <div class="wrapper-list">
                       <template v-for="(item, index) in xiaoyuanxinwen">
-                        <router-link :key="item.id" :to="{path:'/common/details1', query: {itemid: item.id, siteId: item.siteId}}">
+                        <router-link :key="item.id" :to="{path:'/common/details1', query: {itemid: item.id, siteId: item.siteId,columnId:item.columnId}}">
                           <el-row v-if="index>0" class="wrapper-list-item">
                             <el-col :span="3" class="date">{{ getMoment(item.modifyTime, 'MM.DD') }}</el-col>
                             <el-col :span="1"><el-divider class="divider" direction="vertical" /></el-col>
@@ -46,7 +46,7 @@
               <el-tab-pane label="通知公告" name="1">
                 <el-row class="yanjiu">
                   <el-row v-for="item in tongzhigonggao" :key="item.id" class="yanjiu-item">
-                    <router-link :to="{path:'/common/details1', query: {itemid: item.id, siteId: item.siteId}}">
+                    <router-link :to="{path:'/common/details1', query: {itemid: item.id, siteId: item.siteId,columnId:item.columnId}}">
                       <el-row>
                         <el-col class="yanjiu-item-dataTime" :xs="4" :md="2">
                           <div class="childDiv childDiv1">
@@ -69,7 +69,7 @@
               <el-tab-pane label="基层动态" name="2">
                 <el-row class="yanjiu">
                   <el-row v-for="item in jichengdongtai" :key="item.id" class="yanjiu-item">
-                    <router-link :to="{path:'/common/details1', query: {itemid: item.id, siteId: item.siteId}}">
+                    <router-link :to="{path:'/common/details1', query: {itemid: item.id, siteId: item.siteId,columnId:item.columnId}}">
                       <el-row>
                         <el-col class="yanjiu-item-dataTime" :xs="4" :md="2">
                           <div class="childDiv childDiv1">
@@ -259,6 +259,7 @@ export default {
       }
       getList('news', data).then(response => {
         this.tongzhigonggao = response.data.data.data
+        console.log(this.tongzhigonggao)
       })
     },
     getJCDT() {
