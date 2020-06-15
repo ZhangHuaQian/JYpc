@@ -2,3 +2,4 @@
 /collegeHome  学院首页 
 /departmentHome  部门首页
 /common/details2 部门概况 学院概况
+、、、
